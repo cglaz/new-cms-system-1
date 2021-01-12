@@ -10,6 +10,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'user_id' => factory('App\User'),
         'title' => $faker->sentence,
         'post_image' => $faker->imageUrl('900', '300'),
-        'body' => $faker->paragraph,
+        'body' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
     ];
 });
