@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -24,9 +25,21 @@ class PostController extends Controller
 
     public function store()
     {
-        auth()->user();
+        $inputs = request()->validate([
 
-        dd(request()->all());
+            'title' => 'required|min:8|max:100',
+            'post_image' => 'file',
+            'body' => 'required',
+        ]);
+
+        if (request('post_image')) {
+
+            $inputs['post_image'] = request('post_image')->store('images');
+        }
+
+        auth()->user()->posts()->create($inputs);
+
+        return back();
 
     }
 }
