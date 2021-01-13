@@ -12,7 +12,10 @@ class PostController extends Controller
     public function index()
     {
 
-        return view('admin.posts.index');
+        $posts = Post::all();
+
+        return view('admin.posts.index', ['posts' => $posts]);
+
     }
 
     public function show(Post $post)
