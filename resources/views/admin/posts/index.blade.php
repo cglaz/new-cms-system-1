@@ -14,6 +14,7 @@
                   <thead>
                     <tr>
                       <th>id</th>
+                      <th>Owner</th>
                       <th>Title</th>
                       <th>Content</th>
                       <th>Image</th>
@@ -26,6 +27,7 @@
                    @foreach($posts as $post)
                         <tr>
                             <td>{{$post->id}}</td>
+                            <td>{{$post->user->name}}</td>
                             <td>{{$post->title}}</td>
                             <td>{{Str::limit($post->body, 50, '...')}}</td>
                             <td>
