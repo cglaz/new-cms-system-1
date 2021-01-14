@@ -8,16 +8,17 @@
             @csrf
             <div clas="form-group">
                 <label for="title">Title</label>
-                <input type="text" name="title" class="form-control" id="title" aria-describedby="" placeholder="Enter title">
+                <input type="text" name="title" class="form-control" id="title" aria-describedby="" placeholder="Enter title" value="{{$posts->title}}">
             </div>
 
             <div clas="form-group">
+                <div><img  src="{{$posts->post_image}}" alt="" class="img-thumbnail"></div>
                 <label for="title">File</label>
                 <input type="file" name="post_image" class="form-control-file" id="post_image" aria-describedby="">
             </div>
 
             <div class="form-group">
-                    <textarea name="body" class="form-control" id="body" cols="30" rows="10"></textarea>
+                    <textarea name="body" class="form-control" id="body" cols="30" rows="10">{{$posts->body}}"</textarea>
             </div>
 
             <button class="btn btn-primary" type="submit">Submit</button>
