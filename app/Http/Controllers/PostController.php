@@ -63,6 +63,32 @@ class PostController extends Controller
 
     }
 
+    public function update(Post $post)
+    {
+        $inputs = request()->validate([
+
+            'title' => 'required|min:8|max:100',
+            'post_image' => 'file',
+            'body' => 'required',
+        ]);
+
+        if (request('post_image')) {
+
+            $inputs['post_image'] = request('post_image')->store('images');
+            $post->post_image = $inputs['post_image'];
+        }
+
+        $post->title = $inputs['title'];
+        $post->body = $inputs['body'];
+
+        $post->update();
+
+        session()->flash('message_updated', 'Post has been updated');
+
+        return redirect()->route('post.index');
+
+    }
+
     public function destroy(Post $post)
     {
 

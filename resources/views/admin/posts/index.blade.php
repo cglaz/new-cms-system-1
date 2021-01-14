@@ -10,7 +10,10 @@
                     <div class="alert alert-danger text-center font-weight-bold" role="alert">{{session('message')}}</div>
                  </div>
             @elseif(session('message_created'))
-                <div class="alert alert-danger text-center font-weight-bold" role="alert">{{session('message_created')}}</div>
+                <div class="alert alert-success text-center font-weight-bold" role="alert">{{session('message_created')}}</div>
+                @endif
+            @if(session('message_updated'))
+                    <div class="alert alert-success text-center font-weight-bold" role="alert">{{session('message_updated')}}</div>
             @endif
             <div class="card-body">
               <div class="table-responsive">
