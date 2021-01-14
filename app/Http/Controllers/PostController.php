@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use session;
 
 class PostController extends Controller
 {
@@ -47,6 +49,26 @@ class PostController extends Controller
         }
 
         auth()->user()->posts()->create($inputs);
+
+        session()->flash('message_created', 'Post title: ' . $inputs['title'] . ' has been created');
+
+        return redirect()->route('post.index');
+
+    }
+
+    public function edit(Post $post)
+    {
+
+        return view('admin.posts.edit', ['posts' => $post]);
+
+    }
+
+    public function destroy(Post $post)
+    {
+
+        $post->delete();
+
+        session()->flash('message', 'Post title: ' . $post->title . ' has been deleted');
 
         return back();
 

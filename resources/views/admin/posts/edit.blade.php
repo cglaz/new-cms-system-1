@@ -2,7 +2,7 @@
 
     @section('content')
 
-    <h1 class="text-center">Create</h1>
+    <h1 class="text-center">Edit a post</h1>
 
         <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
             @csrf
