@@ -43,11 +43,13 @@
                             <td>{{$post->created_at->diffForHumans()}}</td>
                             <td>{{$post->updated_at->diffForHumans()}}</td>
                             <td>
+
                                 <form action="{{route('post.destroy', $post->id)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
+
                             </td>
                         </tr>
                      @endforeach
