@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -17,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
 
-        $posts = auth()->user()->posts;
+        $posts = auth()->user()->posts()->paginate(5);
         return view('admin.posts.index', ['posts' => $posts]);
 
     }
