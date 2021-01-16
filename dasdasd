@@ -1,0 +1,113 @@
+[33mcommit c605bc6aac4f702bc8d955535b0ee67616418d20[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Sat Jan 16 17:29:24 2021 +0100
+
+    Done with laravel pagination but still, create page dosent work
+
+[33mcommit 71292efdf0b1c7e8a137f8ec0b5d8d1526803169[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Fri Jan 15 23:50:48 2021 +0100
+
+    Done with policies, but while creating a new post there is a problem. Can't create post with picture.
+
+[33mcommit dff21be346c5d13e2ea63f3add9bd1c95025cb36[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Thu Jan 14 23:55:04 2021 +0100
+
+    Done with updating a post
+
+[33mcommit 35bf74c3a88e3bac8c596e5dc82f13efa5f9bfbc[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Thu Jan 14 19:12:59 2021 +0100
+
+    Done with fetching data to edit template
+
+[33mcommit dcddcb5efbeaf2c64e60e8cdbd77eabd34c2abe7[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Thu Jan 14 19:02:51 2021 +0100
+
+    Done with edit post template
+
+[33mcommit f097aa7151bcfd90a10162989fe8644cb628db40[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Thu Jan 14 13:57:09 2021 +0100
+
+    Done with displaying photos in the create table by the accessor
+
+[33mcommit dfef64325a8525519918b6e7f8abec288086940c[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Wed Jan 13 22:22:54 2021 +0100
+
+    Done with the fetching data from users post
+
+[33mcommit d58e6fbab7a02cc8e38358dae5fc01548eaf363a[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Wed Jan 13 21:47:12 2021 +0100
+
+    Done with the tables in the Show all posts view
+
+[33mcommit 7393eb882fca1d8a121d213f0988ec532ae3428a[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Wed Jan 13 21:33:05 2021 +0100
+
+    Done with showing posts admin template
+
+[33mcommit a9abc36092947555939e9d157859489d6d68f016[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Tue Jan 12 21:50:34 2021 +0100
+
+    Uploading pictures from administrator panel done
+
+[33mcommit 4677bf06fdceba74fbeaf892e2b3293bd3d7bc1a[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Tue Jan 12 21:01:12 2021 +0100
+
+    Done with create form on the create page 2021.01.12 21:01
+
+[33mcommit 784e774e523db7ac31085950f0333255d6cbeb20[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Tue Jan 12 20:11:03 2021 +0100
+
+    Done with displaying posts from the databas 2021.01.12 20:10
+
+[33mcommit eb0baa36e43fbc51bed48c25d1b644c06babcb8d[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Tue Jan 12 19:48:31 2021 +0100
+
+    Done with displaying posts from the database, on home page 2021.01.12 19:48
+
+[33mcommit 9158074d7ee6e81407154f07c1d853db7d4a36e7[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Sun Jan 10 22:14:48 2021 +0100
+
+    Created working factory user and post, and then created some random posts and users...
+
+[33mcommit ea470bf2a46fa1cd619c8660b1f565434c5a7193[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Sun Jan 10 21:30:11 2021 +0100
+
+    Did Post model and the migration
+
+[33mcommit e347b974fd6bae52997258b1a85b8e81106cb836[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Sun Jan 10 20:42:36 2021 +0100
+
+    Working Admin Panel, part1
+
+[33mcommit 056d7eb507f0bbfc554231426942c25031208769[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Sun Jan 10 20:25:45 2021 +0100
+
+    added admin template
+
+[33mcommit 87ed627bf39e4e5f85c6c1a4a365fcd2a0a4f002[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Sun Jan 10 18:16:29 2021 +0100
+
+    Home template and master blade done
+
+[33mcommit b167ede158f4efe725c5822c5de3d64bcb3f0958[m
+Author: cglaz <cezazzr@gmail.com>
+Date:   Sun Jan 10 17:49:46 2021 +0100
+
+    1.Installed procject and make auth system

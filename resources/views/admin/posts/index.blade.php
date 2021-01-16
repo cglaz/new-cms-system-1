@@ -5,12 +5,14 @@
         <h1 class="text-center">All posts</h1>
 
         <div class="card shadow mb-4">
-             @if(session('message'))
+             @if(session('message_delete'))
                 <div class="card-header py-3">
-                    <div class="alert alert-danger text-center font-weight-bold" role="alert">{{session('message')}}</div>
+                    <div class="alert alert-danger text-center font-weight-bold" role="alert">{{session('message_delete')}}</div>
                  </div>
             @elseif(session('message_created'))
-                <div class="alert alert-danger text-center font-weight-bold" role="alert">{{session('message_created')}}</div>
+                <div class="alert alert-success text-center font-weight-bold" role="alert">{{session('message_created')}}</div>
+             @elseif(session('message_updated'))
+                <div class="alert alert-success text-center font-weight-bold" role="alert">{{session('message_updated')}}</div>
             @endif
             <div class="card-body">
               <div class="table-responsive">

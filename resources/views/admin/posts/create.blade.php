@@ -6,6 +6,7 @@
 
         <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
             @csrf
+            @method('POST')
             <div clas="form-group">
                 <label for="title">Title</label>
                 <input type="text" name="title" class="form-control" id="title" aria-describedby="" placeholder="Enter title">

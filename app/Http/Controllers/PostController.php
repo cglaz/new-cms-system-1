@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use session;
 
 class PostController extends Controller
@@ -34,23 +35,21 @@ class PostController extends Controller
 
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $inputs = request()->validate([
-
-            'title' => 'required|min:8|max:100',
+            'title' => 'required|unique:posts|max:255',
             'post_image' => 'file',
             'body' => 'required',
         ]);
 
         if (request('post_image')) {
-
             $inputs['post_image'] = request('post_image')->store('images');
         }
 
-        auth()->user()->posts()->create($inputs);
+        Auth::user()->posts()->create($inputs);
 
-        session()->flash('message_created', 'Post title: ' . $inputs['title'] . ' has been created');
+        session()->flash('message_created', 'Post has been created');
 
         return redirect()->route('post.index');
 
@@ -68,9 +67,33 @@ class PostController extends Controller
 
         $post->delete();
 
-        session()->flash('message', 'Post title: ' . $post->title . ' has been deleted');
+        session()->flash('message_delete', 'Post title: ' . $post->title . ' has been deleted');
 
         return back();
+
+    }
+
+    public function update(Post $post)
+    {
+        $inputs = request()->validate([
+            'title' => 'required|unique:posts|max:255',
+            'post_image' => 'file',
+            'body' => 'required',
+        ]);
+
+        if (request('post_image')) {
+
+            $inputs['post_image'] = request('post_image')->store('images');
+            $post->post_image = $inputs['post_image'];
+        }
+        $post->title = $inputs['title'];
+        $post->title = $inputs['body'];
+
+        $post->update($inputs);
+
+        session()->flash('message_updated', 'Post title: ' . $inputs['title'] . ' has been updated');
+
+        return redirect()->route('post.index');
 
     }
 }
