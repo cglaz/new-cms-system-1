@@ -2,7 +2,7 @@
 
     @section('content')
 
-        <h1 class="text-center">All posts</h1>
+        <h1 class="text-center">All postss</h1>
 
         <div class="card shadow mb-4">
              @if(session('message_delete'))
