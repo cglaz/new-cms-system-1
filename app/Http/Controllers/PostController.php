@@ -59,7 +59,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        //  $this->authorize('view', $post);
+        $this->authorize('view', $post);
 
         return view('admin.posts.edit', ['posts' => $post]);
 
@@ -67,7 +67,7 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-
+        $this->authorize('delete', $post);
         $post->delete();
 
         session()->flash('message_delete', 'Post title: ' . $post->title . ' has been deleted');
