@@ -2,7 +2,7 @@
 
     @section('content')
 
-        <h1 class="text-center">All postss</h1>
+        <h1 class="text-center">All posts</h1>
 
         <div class="card shadow mb-4">
              @if(session('message_delete'))
@@ -34,7 +34,7 @@
                         <tr>
                             <td>{{$post->id}}</td>
                             <td>{{$post->user->name}}</td>
-                            <td><a href="{{route('post.edit', $post->id)}}">{{$post->title}}</a></td>
+                            <td>@can('view', $post)<a href="{{route('post.edit', $post->id)}}">@endcan{{$post->title}}</a></td>
                             <td>{{Str::limit($post->body, 50, '...')}}</td>
                             <td>
                                 <img height="40px" src="{{$post->post_image}}" alt="">
@@ -42,12 +42,18 @@
                             <td>{{$post->created_at->diffForHumans()}}</td>
                             <td>{{$post->updated_at->diffForHumans()}}</td>
                             <td>
+
+                                @can('view', $post)
+
                                 <form action="{{route('post.destroy', $post->id)}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </td>
+
+                                @endcan
+
                         </tr>
                      @endforeach
                   </tbody>

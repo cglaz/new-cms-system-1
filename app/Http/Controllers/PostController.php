@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,7 @@ use session;
 class PostController extends Controller
 {
     //
+    use AuthorizesRequests;
 
     public function index()
     {
@@ -57,6 +59,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        //  $this->authorize('view', $post);
 
         return view('admin.posts.edit', ['posts' => $post]);
 
@@ -88,6 +91,8 @@ class PostController extends Controller
         }
         $post->title = $inputs['title'];
         $post->title = $inputs['body'];
+
+        $this->authorize('update', $post);
 
         $post->update($inputs);
 
