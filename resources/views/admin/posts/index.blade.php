@@ -11,8 +11,14 @@
                  </div>
             @elseif(session('message_created'))
                 <div class="alert alert-success text-center font-weight-bold" role="alert">{{session('message_created')}}</div>
+<<<<<<< HEAD
              @elseif(session('message_updated'))
                 <div class="alert alert-success text-center font-weight-bold" role="alert">{{session('message_updated')}}</div>
+=======
+                @endif
+            @if(session('message_updated'))
+                    <div class="alert alert-success text-center font-weight-bold" role="alert">{{session('message_updated')}}</div>
+>>>>>>> c605bc6aac4f702bc8d955535b0ee67616418d20
             @endif
             <div class="card-body">
               <div class="table-responsive">
@@ -50,6 +56,7 @@
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
+
                             </td>
 
                                 @endcan

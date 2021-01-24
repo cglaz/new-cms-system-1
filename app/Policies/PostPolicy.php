@@ -30,8 +30,11 @@ class PostPolicy
      */
     public function view(User $user, Post $post)
     {
+<<<<<<< HEAD
         //
 
+=======
+>>>>>>> c605bc6aac4f702bc8d955535b0ee67616418d20
         return $user->id === $post->user_id;
     }
 
@@ -43,7 +46,11 @@ class PostPolicy
      */
     public function create(User $user)
     {
+<<<<<<< HEAD
         //
+=======
+        return $user->is($user);
+>>>>>>> c605bc6aac4f702bc8d955535b0ee67616418d20
     }
 
     /**
@@ -55,7 +62,10 @@ class PostPolicy
      */
     public function update(User $user, Post $post)
     {
+<<<<<<< HEAD
         //
+=======
+>>>>>>> c605bc6aac4f702bc8d955535b0ee67616418d20
         return $user->id === $post->user_id;
     }
 
