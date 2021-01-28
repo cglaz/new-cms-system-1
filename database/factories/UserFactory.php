@@ -15,10 +15,11 @@ use Illuminate\Support\Str;
 | your application. Factories provide a convenient way to generate new
 | model instances for testing / seeding your application's database.
 |
-*/
+ */
 
 $factory->define(User::class, function (Faker $faker) {
     return [
+        'username' => $faker->userName,
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
