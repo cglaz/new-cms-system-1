@@ -34,7 +34,7 @@
                    @foreach($users as $user)
                         <tr>
                             <td>{{$user->id}}</td>
-                            <td>{{$user->username}}</td>
+                            <td>@can('view', $user)<a href="{{route('user.profile.show', $user->id)}}">@endcan{{$user->username}}</a></td>
                             <td>{{$user->name}}</td>
                             <td>
                                 <img height="40px" src="{{$user->avatar}}" alt="">
