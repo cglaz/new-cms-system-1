@@ -15,8 +15,8 @@
             <a href="{{route('post', $post->id)}}" class="btn btn-primary">Read More &rarr;</a>
           </div>
           <div class="card-footer text-muted">
-            Posted on {{$post->created_at->diffForHumans()}}
-            <a href="#">Start Bootstrap</a>
+            Posted {{$post->created_at->diffForHumans()}}
+            by <strong>{{$post->user->name}}</strong>
           </div>
         </div>
         @endforeach

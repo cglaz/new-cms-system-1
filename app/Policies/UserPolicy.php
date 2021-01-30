@@ -29,10 +29,8 @@ class UserPolicy
      */
     public function view(User $user, User $model)
     {
-        if ($user->userHasRole('admin')) {
 
-            return true;
-        }
+        return true;
 
     }
 
