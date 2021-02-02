@@ -25,7 +25,7 @@
 <hr>
 
 <!-- Post Content -->
-<p>{{$post->body}}</p>
+<p>{!!$post->body!!}</p>
 
 
 <hr>

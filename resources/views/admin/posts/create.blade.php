@@ -2,7 +2,9 @@
 
     @section('content')
 
+
     <h1 class="text-center">Create Post</h1>
+
 
         <form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
             @csrf
@@ -23,6 +25,9 @@
 
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
+
+
+   @include('includes.tinyeditor')
 
     @endsection
 

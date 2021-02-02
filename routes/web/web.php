@@ -21,3 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', 'AdminsController@index')->name('admin.index');
 
 });
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
